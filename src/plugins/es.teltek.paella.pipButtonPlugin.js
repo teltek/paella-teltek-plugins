@@ -1,6 +1,6 @@
 import {ButtonPlugin} from 'paella-core';
 
-import pipIcon from '../icons/volume-mute.svg';
+import pipIcon from '../icons/pip.svg';
 
 import "../css/pipButton.css";
 
