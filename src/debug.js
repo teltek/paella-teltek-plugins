@@ -47,7 +47,6 @@ let paella = new Paella('player-container', initParams);
 paella.loadManifest().catch(e => console.error(e));
 
 paella.bindEvent(Events.ENDED, async () => {
-
     if (hasIntro && !introLoaded) {
         introLoaded = true;
         await paella.reload();
