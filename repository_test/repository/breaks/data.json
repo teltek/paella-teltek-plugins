@@ -1,0 +1,37 @@
+{
+	"metadata": {
+		"duration": 909.13,
+		"title": "Monostream",
+		"preview": "https://repository.paellaplayer.upv.es/belmar-multiresolution/preview/presenter_cut.jpg"
+	},
+	"streams": [
+		{
+			"sources": {
+				"mp4": [
+					{
+						"src": "https://repository.paellaplayer.upv.es/belmar-multiresolution/media/720-presenter.mp4",
+						"mimetype": "video/mp4",
+						"res": {
+							"w": "1920",
+							"h": "1080"
+						}
+					}
+				]
+			},
+			"preview": "https://repository.paellaplayer.upv.es/belmar-multiresolution/preview/presenter_cut.jpg",
+			"content":"presenter",
+			"audioTag":"es"
+		}
+	],
+	"breaks" : [
+		{
+			"start": 5,
+			"end": 65
+		},
+		{
+			"start": 90,
+			"end": 1000
+		}
+	],
+	"frameList": []
+}

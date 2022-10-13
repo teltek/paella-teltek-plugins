@@ -39,7 +39,6 @@ export default class PipButtonPlugin extends ButtonPlugin {
                 video.webkitSetPresentationMode("picture-in-picture");
             }
         } else if ('pictureInPictureEnabled' in document) {
-            console.log(video);
             if (video !== document.pictureInPictureElement) {
                 video.requestPictureInPicture();
             } else {
