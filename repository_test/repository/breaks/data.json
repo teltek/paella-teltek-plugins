@@ -25,12 +25,20 @@
 	],
 	"breaks" : [
 		{
-			"start": 5,
-			"end": 65
+			"start": 0,
+			"end": 5
+		},
+		{
+			"start": 35,
+			"end": 60
+		},
+		{
+			"start": 70,
+			"end": 75
 		},
 		{
 			"start": 90,
-			"end": 1000
+			"end": 950
 		}
 	],
 	"frameList": []

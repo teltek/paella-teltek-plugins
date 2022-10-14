@@ -1,6 +1,6 @@
-import {ButtonPlugin, Events, bindEvent} from 'paella-core';
+import {Events, bindEvent, ButtonPlugin} from 'paella-core';
 
-import "../css/breakButton.css";
+import "../css/breaksButton.css";
 
 const TIMEUPDATE_SECONDS_UPDATE = 0.250;
 
@@ -11,12 +11,12 @@ function buildBreaks() {
     let breakEndTime = 0;
     let final_break = false;
 
-    bindEvent(this.player, Events.TIMEUPDATE, async ({ currentTime }) => {
-        if(final_break) {
+    bindEvent(this.player, Events.TIMEUPDATE, async ({currentTime}) => {
+        if (final_break) {
             final_break = false;
         }
 
-        if(!final_break) {
+        if (!final_break) {
             videoManifest.breaks.forEach(function (element) {
                 let difference = element.start - currentTime;
                 if ((difference > 0 && difference < TIMEUPDATE_SECONDS_UPDATE)) {
