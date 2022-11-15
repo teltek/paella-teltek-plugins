@@ -1,3 +1,11 @@
+.duration-block i {
+    display: none !important;
+}
+
+button.duration-block {
+    display: none !important;
+}
+
 .button-plugin-side-area.volume-button {
     height: 40px;
     display: inline-block;
@@ -8,20 +16,8 @@
     height: 40px;
 }
 
-.duration-block i {
-    display: none !important;
-}
-
-button.duration-block {
-    display: none !important;
-}
-
 .duration-button {
-    font-size: 0.75em;
-    margin-left: 1em;
+    font-size: 0.9em;
+    margin-left: 1.5em;
     margin-right: 5px;
-}
-
- {
-    display:none;
 }
