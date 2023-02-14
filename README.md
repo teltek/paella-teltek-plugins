@@ -20,6 +20,7 @@ https://{IP}?id=multistream
 https://{IP}?id=playlist
 https://{IP}?id=live
 https://{IP}?id=introAndTail
+https://{IP}?id=captions
 ```
 
 to view a dual-stream video with the different plugins created.

@@ -1,6 +1,6 @@
 {
 	"name": "paella-teltek-plugins",
-	"version": "1.0.8",
+	"version": "1.0.9",
 	"description": "A set of plugins for Paella Player",
 	"main": "src/index.js",
 	"module": "dist/paella-teltek-plugins.js",
@@ -33,10 +33,11 @@
 		"webpack-dev-server": "^4.7.3"
 	},
 	"dependencies": {
-		"paella-core": "^1.5.0",
-		"paella-basic-plugins": "^1.2.0",
-		"paella-slide-plugins": "^1.2.1",
+		"paella-core": "^1.15.0",
+		"paella-basic-plugins": "^1.8.1",
+		"paella-slide-plugins": "^1.8.0",
 		"paella-user-tracking": "^1.5.0",
-		"paella-zoom-plugin": "^1.2.0"
+		"paella-zoom-plugin": "^1.2.0",
+		"paella-layout-plugins": "^1.8.0"
 	}
 }
