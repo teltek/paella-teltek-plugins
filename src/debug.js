@@ -8,6 +8,19 @@ import { loadTrimming, setTrimming } from './js/TrimmingLoader';
 
 import getTeltekPluginsContext from "./index";
 
+// Customized icons
+import fullscreenIcon from './icons/fullscreen.svg';
+import windowedIcon from './icons/fullscreen.svg';
+import captionsIcon from './icons/captions.svg';
+import playIcon from './icons/play.svg';
+import pauseIcon from './icons/pause.svg';
+import volumeHighIcon from './icons/volume-high.svg';
+import volumeLowIcon from './icons/volume-low.svg';
+import volumeMidIcon from './icons/volume-mid.svg';
+import volumeMuteIcon from './icons/volume-mute.svg';
+
+import './css/custom_styles.css';
+
 let hasIntro = false;
 let hasTail = false;
 let introLoaded = false;
@@ -45,7 +58,17 @@ const initParams = {
 
 let paella = new Paella('player-container', initParams);
 
-paella.loadManifest().catch(e => console.error(e));
+paella.loadManifest().then(() => {
+    paella.addCustomPluginIcon("es.upv.paella.playPauseButton","play",playIcon);
+    paella.addCustomPluginIcon("es.upv.paella.playPauseButton","pause",pauseIcon);
+    paella.addCustomPluginIcon("es.upv.paella.fullscreenButton","fullscreenIcon",fullscreenIcon);
+    paella.addCustomPluginIcon("es.upv.paella.fullscreenButton","windowedIcon",windowedIcon);
+    paella.addCustomPluginIcon("es.upv.paella.captionsSelectorPlugin","captionsIcon",captionsIcon);
+    paella.addCustomPluginIcon("es.upv.paella.volumeButtonPlugin","volumeHighIcon",volumeHighIcon);
+    paella.addCustomPluginIcon("es.upv.paella.volumeButtonPlugin","volumeLowIcon",volumeLowIcon);
+    paella.addCustomPluginIcon("es.upv.paella.volumeButtonPlugin","volumeMidIcon",volumeMidIcon);
+    paella.addCustomPluginIcon("es.upv.paella.volumeButtonPlugin","volumeMuteIcon",volumeMuteIcon);
+}).catch(e => console.error(e));
 
 paella.bindEvent(Events.ENDED, async () => {
     if (hasIntro && !introLoaded) {
