@@ -24,10 +24,10 @@ let paella = new Paella('player-container', {
 {
     "plugins": {
       ...
-      "es.teltek.paella.integratedDurationButtonPlugin": {
+      "es.teltek.paella.playlistButtonPlugin": {
         "enabled": true,
         "side": "left",
-        "order": 6
+        "order": 4
       },
       ... other plugin settings
     }

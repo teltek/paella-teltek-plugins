@@ -1,21 +1,5 @@
 # Included plugins
 
-### Integrated duration plugin
-
-It allows adds timer on playback bar.
-
-```json
-{
-  "es.teltek.paella.integratedDurationButtonPlugin": {
-    "enabled": true,
-    "side": "left",
-    "order": 6
-  }
-}
-```
-
-**Exported as** `IntegratedDurationPlugin`.
-
 ### Live indicator plugin
 
 Add in the middle of playback bar a simple text "Live" when source is a live.
@@ -64,22 +48,6 @@ Allows you to view and move through the content of a playlist submitted in the v
 ```
 
 **Exported as** `PlaylistButtonPlugin`.
-
-### Volume button plugin
-
-Same functionality as the generic volume plugin but removing the slider hiding.
-
-```json
-{
-  "es.teltek.paella.volumeButtonPlugin": {
-    "enabled": true,
-    "side": "left",
-    "order": 5
-  }
-}
-```
-
-**Exported as** `VolumeButtonPlugin`.
 
 # Other features
 
