@@ -27,7 +27,7 @@ import { EventLogPlugin, Events } from 'paella-core';
 
 import '../css/BreaksPlugin.css';
 
-/*export const loadBreaks = async (player, videoId) => {
+export const loadBreaks = async (player, videoId) => {
     const breaks = [];
 
     const response = await fetch(`/annotation/annotations.json?episode=${videoId}` + '&type=paella%2Fbreaks&day=&limit=1&offset=0');
@@ -45,10 +45,9 @@ import '../css/BreaksPlugin.css';
         }
     }
     return breaks;
-};*/
+};
 
-
-export const loadBreaks = async (player, videoId) => {
+/*export const loadBreaks = async (player, videoId) => {
     const breaks = [];
     const videoManifest = await player.videoManifest;
     try {
@@ -60,7 +59,7 @@ export const loadBreaks = async (player, videoId) => {
         player.log.warn('Error loading breaks annotations');
     }
     return breaks;
-};
+};*/
 
 export default class BreaksPlugin extends EventLogPlugin {
     async load() {
