@@ -6,3 +6,17 @@
     position: relative;
     font-family: helvetica, arial, sans-serif;
 }
+
+.progress-indicator {
+    width: 100%;
+    margin-left: 0;
+    height: 7px;
+}
+
+.progress-indicator-container .progress-indicator-content, .progress-indicator-remaining {
+    height: 7px;
+}
+
+.playback-bar .button-plugins button:hover {
+    background-color: transparent;
+}
