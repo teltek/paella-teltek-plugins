@@ -1,6 +1,6 @@
 {
 	"name": "paella-teltek-plugins",
-	"version": "1.0.12",
+	"version": "1.0.13",
 	"description": "A set of plugins for Paella Player",
 	"main": "src/index.js",
 	"module": "dist/paella-teltek-plugins.js",
