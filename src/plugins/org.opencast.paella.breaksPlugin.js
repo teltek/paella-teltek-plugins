@@ -24,6 +24,7 @@
  */
 
 import { EventLogPlugin, Events } from 'paella-core';
+import { loadTrimming, setTrimming } from '../js/TrimmingLoader';
 
 import '../css/BreaksPlugin.css';
 
@@ -78,8 +79,14 @@ export default class BreaksPlugin extends EventLogPlugin {
     async checkTimeupdate(currentTime) {
         const currentBreak = this.currentBreak(currentTime);
         const paused = await this.player.paused();
+        let time = currentBreak.e + 0.1;
+
+        if(loadTrimming.enable && (loadTrimming.end < currentBreak.e)) {
+            time = loadTrimming.end;
+        }
+
         if (currentBreak && !paused) {
-            await this.player.videoContainer.setCurrentTime(this.trimTime(currentBreak.e + 0.1));
+            await this.player.videoContainer.setCurrentTime(this.trimTime(time));
         }
     }
 
@@ -87,6 +94,7 @@ export default class BreaksPlugin extends EventLogPlugin {
         const currentBreak = this.currentBreak(currentTime);
         const paused = await this.player.paused();
         this.clearPausedMessage();
+
         if (currentBreak && paused) {
             this.setPausedMessage(currentBreak.text);
         }
