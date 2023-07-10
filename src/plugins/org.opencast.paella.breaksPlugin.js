@@ -115,20 +115,18 @@ export default class BreaksPlugin extends EventLogPlugin {
     untrimTime(t) {
         if(this.player.videoContainer.isTrimEnabled && this.player.videoContainer.trimStart > t) {
             return this.player.videoContainer.trimStart;
-        } else {
-            return t;
         }
-        //return this.player.videoContainer.isTrimEnabled ?
-        //    this.player.videoContainer.trimStart + t : t;
+
+        return t;
     }
 
     trimTime(t) {
         if(this.player.videoContainer.isTrimEnabled && this.player.videoContainer.trimEnd < t) {
             this.player.stop();
             return this.player.videoContainer.trimEnd;
-        } else {
-            return t;
         }
+
+        return t;
     }
 
     clearPausedMessage() {
