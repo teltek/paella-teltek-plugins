@@ -26,21 +26,18 @@
 	],
 	"breaks" : [
 		{
-			"start": 0,
-			"end": 5
+			"s": 20,
+			"e": 25
 		},
 		{
-			"start": 35,
-			"end": 60
-		},
-		{
-			"start": 70,
-			"end": 75
-		},
-		{
-			"start": 90,
-			"end": 950
+			"s": 50,
+			"e": 60
 		}
 	],
-	"frameList": []
+	"frameList": [],
+	"trimming": {
+		"start": 10,
+		"end": 180,
+		"enabled": true
+	}
 }

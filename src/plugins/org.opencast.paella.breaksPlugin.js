@@ -29,8 +29,8 @@ import '../css/BreaksPlugin.css';
 
 export const loadBreaks = async (player, videoId) => {
     const breaks = [];
-    const response = await fetch(`/annotation/annotations.json?episode=${videoId}` +
-        '&type=paella%2Fbreaks&day=&limit=1&offset=0');
+
+    const response = await fetch(`/annotation/annotations.json?episode=${videoId}` + '&type=paella%2Fbreaks&day=&limit=1&offset=0');
     if (response.ok) {
         try {
             const data = await response.json();
@@ -47,6 +47,20 @@ export const loadBreaks = async (player, videoId) => {
     return breaks;
 };
 
+/*export const loadBreaks = async (player, videoId) => {
+    const breaks = [];
+    const videoManifest = await player.videoManifest;
+    try {
+        videoManifest.breaks.forEach(({e, s}) => {
+            breaks.push({e, s});
+        });
+    }
+    catch (e) {
+        player.log.warn('Error loading breaks annotations');
+    }
+    return breaks;
+};*/
+
 export default class BreaksPlugin extends EventLogPlugin {
     async load() {
     }
@@ -61,6 +75,7 @@ export default class BreaksPlugin extends EventLogPlugin {
 
     async onEvent(evt,params) {
         const t = params?.currentTime || params.newTime;
+
         if (evt === Events.PLAYER_LOADED) {
             this._breaks = await loadBreaks(this.player, this.player.videoId);
             this._breaks.sort((a,b) => a.s - b.s);
@@ -98,28 +113,27 @@ export default class BreaksPlugin extends EventLogPlugin {
     }
 
     untrimTime(t) {
-        return this.player.videoContainer.isTrimEnabled ?
-            this.player.videoContainer.trimStart + t : t;
+        if(this.player.videoContainer.isTrimEnabled && this.player.videoContainer.trimStart > t) {
+            return this.player.videoContainer.trimStart;
+        } else {
+            return t;
+        }
+        //return this.player.videoContainer.isTrimEnabled ?
+        //    this.player.videoContainer.trimStart + t : t;
     }
 
     trimTime(t) {
-        return this.player.videoContainer.isTrimEnabled ?
-            t - this.player.videoContainer.trimStart : t;
+        if(this.player.videoContainer.isTrimEnabled && this.player.videoContainer.trimEnd < t) {
+            this.player.stop();
+            return this.player.videoContainer.trimEnd;
+        } else {
+            return t;
+        }
     }
 
     clearPausedMessage() {
-        if (this._currentMessage) {
-            this.player.videoContainer.baseVideoRect.removeChild(this._currentMessage);
-            this._currentMessage = null;
-        }
     }
 
     setPausedMessage(text) {
-        if (!this._currentMessage) {
-            this._currentMessage = document.createElement('div');
-            this._currentMessage.className = 'breaks-plugin-message';
-            this.player.videoContainer.baseVideoRect.appendChild(this._currentMessage);
-        }
-        this._currentMessage.innerHTML = text;
     }
 }

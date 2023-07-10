@@ -13,7 +13,7 @@ export default class ViewsPlugin extends EventLogPlugin {
         let manifest = await this.player.videoManifest;
         fetch('/mediaplayed/'+manifest.metadata.id)
             .then(function(response) {
-                console.log(response.json());
+                console.log('Increase view for video with ID: ' + manifest.metadata.id);
             });
     }
 }
