@@ -73,10 +73,12 @@ paella.bindEvent(Events.ENDED, async () => {
     if (hasIntro && !introLoaded) {
         introLoaded = true;
         await paella.reload();
+        await paella.play();
     }
 
     if(originalVideoLoaded && hasTail && !tailLoaded) {
         await paella.reload();
+        await paella.play();
     }
 
     originalVideoLoaded = true;
