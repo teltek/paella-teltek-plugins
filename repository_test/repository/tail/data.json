@@ -10,7 +10,7 @@
 			"sources": {
 				"mp4": [
 					{
-						"src": "https://repository.paellaplayer.upv.es/belmar-multiresolution/media/720-presenter.mp4",
+						"src": "https://repository.paellaplayer.upv.es/pm-be0c7738-039d-9445-8237-8b85f37cd303/video/720p.mp4",
 						"mimetype": "video/mp4",
 						"res": {
 							"w": "1920",
